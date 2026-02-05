@@ -1,5 +1,6 @@
 'use client';
 
+import { Sparkles, Trophy } from 'lucide-react';
 import type { Difficulty } from '@/types/game';
 
 interface WinModalProps {
@@ -33,13 +34,13 @@ export function WinModal({
 
       <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 max-w-md w-full border border-slate-700/50 shadow-2xl animate-scale-in">
         <div className="text-center">
-          <div className="text-6xl mb-4">🎉</div>
+          <div className="text-6xl mb-4"><Sparkles className="w-16 h-16 mx-auto text-yellow-400" /></div>
           <h2 className="text-3xl font-bold text-white mb-2">Congratulations!</h2>
           <p className="text-slate-400 mb-6">You found all the pairs!</p>
 
           {isNewBest && (
             <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 rounded-lg p-3 mb-6">
-              <span className="text-amber-400 font-semibold">🏆 New Best Score!</span>
+              <span className="text-amber-400 font-semibold inline-flex items-center gap-1"><Trophy className="w-5 h-5" /> New Best Score!</span>
             </div>
           )}
 

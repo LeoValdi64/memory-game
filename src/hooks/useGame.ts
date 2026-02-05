@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react';
 import type { Card, Difficulty, GameState } from '@/types/game';
-import { DIFFICULTY_CONFIG, EMOJI_SETS } from '@/types/game';
+import { DIFFICULTY_CONFIG, SYMBOL_SETS } from '@/types/game';
 
 function shuffleArray<T>(array: T[]): T[] {
   const newArray = [...array];
@@ -16,21 +16,21 @@ function shuffleArray<T>(array: T[]): T[] {
 function generateCards(difficulty: Difficulty): Card[] {
   const { pairs } = DIFFICULTY_CONFIG[difficulty];
 
-  // Combine all emoji sets and shuffle, then take needed number
-  const allEmojis = shuffleArray([
-    ...EMOJI_SETS.animals,
-    ...EMOJI_SETS.foods,
-    ...EMOJI_SETS.objects,
+  // Combine all symbol sets and shuffle, then take needed number
+  const allSymbols = shuffleArray([
+    ...SYMBOL_SETS.animals,
+    ...SYMBOL_SETS.foods,
+    ...SYMBOL_SETS.objects,
   ]);
 
-  const selectedEmojis = allEmojis.slice(0, pairs);
+  const selectedSymbols = allSymbols.slice(0, pairs);
 
   // Create pairs
   const cards: Card[] = [];
-  selectedEmojis.forEach((emoji, index) => {
+  selectedSymbols.forEach((symbol, index) => {
     cards.push(
-      { id: index * 2, emoji, isFlipped: false, isMatched: false },
-      { id: index * 2 + 1, emoji, isFlipped: false, isMatched: false }
+      { id: index * 2, symbol, isFlipped: false, isMatched: false },
+      { id: index * 2 + 1, symbol, isFlipped: false, isMatched: false }
     );
   });
 
@@ -139,7 +139,7 @@ export function useGame(
       return;
     }
 
-    const isMatch = firstCard.emoji === secondCard.emoji;
+    const isMatch = firstCard.symbol === secondCard.symbol;
 
     const timeout = setTimeout(() => {
       setGameState(prev => {

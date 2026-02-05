@@ -2,7 +2,7 @@ export type Difficulty = 'easy' | 'medium' | 'hard';
 
 export interface Card {
   id: number;
-  emoji: string;
+  symbol: string;
   isFlipped: boolean;
   isMatched: boolean;
 }
@@ -31,8 +31,8 @@ export const DIFFICULTY_CONFIG: Record<Difficulty, { pairs: number; cols: number
   hard: { pairs: 12, cols: 6 },
 };
 
-export const EMOJI_SETS = {
-  animals: ['🐶', '🐱', '🐼', '🦊', '🦁', '🐸', '🐵', '🐰', '🐻', '🐨', '🐯', '🦄'],
-  foods: ['🍎', '🍕', '🍔', '🍩', '🍦', '🌮', '🍣', '🍰', '🍪', '🍓', '🍇', '🥑'],
-  objects: ['⭐', '💎', '🎈', '🎸', '🚀', '💡', '🎯', '🔮', '🎪', '🎭', '🏆', '🎨'],
+export const SYMBOL_SETS = {
+  animals: ['Dog', 'Cat', 'Panda', 'Fox', 'Lion', 'Frog', 'Ape', 'Bunny', 'Bear', 'Koala', 'Tiger', 'Uni'],
+  foods: ['Apple', 'Pizza', 'Burger', 'Donut', 'Cream', 'Taco', 'Sushi', 'Cake', 'Cookie', 'Berry', 'Grape', 'Avo'],
+  objects: ['Star', 'Gem', 'Ball', 'Music', 'Ship', 'Bulb', 'Dart', 'Orb', 'Tent', 'Mask', 'Cup', 'Art'],
 };
