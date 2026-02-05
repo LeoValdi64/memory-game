@@ -2,7 +2,7 @@ export type Difficulty = 'easy' | 'medium' | 'hard';
 
 export interface Card {
   id: number;
-  symbol: string;
+  label: string;
   isFlipped: boolean;
   isMatched: boolean;
 }

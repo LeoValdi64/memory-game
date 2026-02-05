@@ -24,7 +24,7 @@ export function GameBoard({ cards, difficulty, onCardClick, disabled }: GameBoar
       {cards.map(card => (
         <Card
           key={card.id}
-          emoji={card.emoji}
+          label={card.label}
           isFlipped={card.isFlipped}
           isMatched={card.isMatched}
           onClick={() => onCardClick(card.id)}

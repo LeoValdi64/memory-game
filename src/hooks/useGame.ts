@@ -27,10 +27,10 @@ function generateCards(difficulty: Difficulty): Card[] {
 
   // Create pairs
   const cards: Card[] = [];
-  selectedSymbols.forEach((symbol, index) => {
+  selectedSymbols.forEach((label, index) => {
     cards.push(
-      { id: index * 2, symbol, isFlipped: false, isMatched: false },
-      { id: index * 2 + 1, symbol, isFlipped: false, isMatched: false }
+      { id: index * 2, label, isFlipped: false, isMatched: false },
+      { id: index * 2 + 1, label, isFlipped: false, isMatched: false }
     );
   });
 
@@ -139,7 +139,7 @@ export function useGame(
       return;
     }
 
-    const isMatch = firstCard.symbol === secondCard.symbol;
+    const isMatch = firstCard.label === secondCard.label;
 
     const timeout = setTimeout(() => {
       setGameState(prev => {

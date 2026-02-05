@@ -3,20 +3,20 @@
 import { memo } from 'react';
 
 interface CardProps {
-  emoji: string;
+  label: string;
   isFlipped: boolean;
   isMatched: boolean;
   onClick: () => void;
   disabled: boolean;
 }
 
-function CardComponent({ emoji, isFlipped, isMatched, onClick, disabled }: CardProps) {
+function CardComponent({ label, isFlipped, isMatched, onClick, disabled }: CardProps) {
   return (
     <button
       onClick={onClick}
       disabled={disabled || isFlipped || isMatched}
       className="aspect-square perspective-1000 cursor-pointer disabled:cursor-default"
-      aria-label={isFlipped || isMatched ? emoji : 'Hidden card'}
+      aria-label={isFlipped || isMatched ? label : 'Hidden card'}
     >
       <div
         className={`relative w-full h-full transition-transform duration-600 transform-style-3d ${
@@ -48,7 +48,7 @@ function CardComponent({ emoji, isFlipped, isMatched, onClick, disabled }: CardP
             }`}
         >
           <span className={`transform ${isMatched ? 'scale-110' : ''} transition-transform duration-300`}>
-            {emoji}
+            {label}
           </span>
         </div>
       </div>
