@@ -21,16 +21,19 @@ export const metadata: Metadata = {
   creator: "MemoryMaster",
   publisher: "MemoryMaster",
   robots: "index, follow",
+  alternates: {
+    canonical: "https://memory-game-liard-gamma.vercel.app",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://memory-game.vercel.app",
+    url: "https://memory-game-liard-gamma.vercel.app",
     siteName: "MemoryMaster",
     title: "MemoryMaster - Free Online Memory Card Game",
     description: "Test your memory with MemoryMaster! A fun, free online memory card matching game with 3 difficulty levels, beautiful animations, and best score tracking.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://memory-game-liard-gamma.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "MemoryMaster - Memory Card Game",
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MemoryMaster - Free Online Memory Card Game",
     description: "Test your memory with MemoryMaster! A fun, free memory card matching game.",
-    images: ["/og-image.png"],
+    images: ["https://memory-game-liard-gamma.vercel.app/og-image.png"],
   },
   icons: {
     icon: [
@@ -65,6 +68,20 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: "MemoryMaster",
+              description:
+                "A fun, free online memory card matching game with 3 difficulty levels, beautiful animations, and best score tracking.",
+              url: "https://memory-game-liard-gamma.vercel.app",
+              applicationCategory: "Game",
+            }),
+          }}
+        />
         {children}
       </body>
     </html>

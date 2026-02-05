@@ -97,12 +97,9 @@ export default function Home() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <span className="text-4xl">🧠</span>
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-              MemoryMaster
-            </h1>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent mb-2">
+            MemoryMaster
+          </h1>
           <p className="text-slate-400 text-lg">Find all the matching pairs!</p>
         </div>
 
@@ -144,7 +141,7 @@ export default function Home() {
             onClick={handlePlayAgain}
             className="px-8 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40"
           >
-            🔄 New Game
+            New Game
           </button>
         </div>
 
