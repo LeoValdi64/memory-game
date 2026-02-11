@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "MemoryMaster - Free Online Memory Card Game",
-  description: "Test your memory with MemoryMaster! A fun, free online memory card matching game with 3 difficulty levels, beautiful animations, and best score tracking. Play now!",
+  description: "Test your memory with MemoryMaster! A free online card matching game with 3 difficulty levels, beautiful animations, and best score tracking.",
   keywords: ["memory game", "card game", "matching game", "brain game", "puzzle game", "free game", "online game"],
   authors: [{ name: "MemoryMaster" }],
   creator: "MemoryMaster",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://memory-game-liard-gamma.vercel.app",
     siteName: "MemoryMaster",
     title: "MemoryMaster - Free Online Memory Card Game",
-    description: "Test your memory with MemoryMaster! A fun, free online memory card matching game with 3 difficulty levels, beautiful animations, and best score tracking.",
+    description: "Test your memory with MemoryMaster! A free online card matching game with 3 difficulty levels, beautiful animations, and best score tracking.",
     images: [
       {
         url: "https://memory-game-liard-gamma.vercel.app/og-image.png",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MemoryMaster - Free Online Memory Card Game",
-    description: "Test your memory with MemoryMaster! A fun, free memory card matching game.",
+    description: "Test your memory with MemoryMaster! A free online card matching game.",
     images: ["https://memory-game-liard-gamma.vercel.app/og-image.png"],
   },
   icons: {
@@ -73,12 +73,22 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebApplication",
+              "@type": "VideoGame",
               name: "MemoryMaster",
               description:
-                "A fun, free online memory card matching game with 3 difficulty levels, beautiful animations, and best score tracking.",
+                "A free online card matching game with 3 difficulty levels, beautiful animations, and best score tracking.",
               url: "https://memory-game-liard-gamma.vercel.app",
+              genre: "Puzzle",
+              gamePlatform: "Web Browser",
+              numberOfPlayers: { "@type": "QuantitativeValue", value: 1 },
+              playMode: "SinglePlayer",
               applicationCategory: "Game",
+              operatingSystem: "Any",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
             }),
           }}
         />
